@@ -4,7 +4,7 @@ My Intern Project 3 @USTC: LLM for vision understanding and retrieval
 ## Instruction
 **Dataset**
 
-The same image dataset as Project 1, however, we just need the images, but don't need labels.
+The same image dataset as Project 1 (COCO), however, we just need the images, but don't need labels.
 Also, a smaller set might be enough, say 50 images.
 
 **Model**
