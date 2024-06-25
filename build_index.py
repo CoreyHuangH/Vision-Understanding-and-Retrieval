@@ -81,7 +81,8 @@ def build_index(typesense_client):
             print(f"Failed to index document '{description['filename']}': {e}")
 
     print("Documents indexed successfully.")
-    
+
+
 if __name__ == "__main__":
     typesense_client = typesense.Client(
         {
