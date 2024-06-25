@@ -30,7 +30,7 @@ def search_images(query, typesense_client):
         for hit in search_results["hits"]:
             doc = hit["document"]
             results.append(
-                {"filename": doc["filename"], "description": doc["description"]}
+                {"filename": doc["filename"], "id": doc["id"], "description": doc["description"]}
             )
 
         return results
