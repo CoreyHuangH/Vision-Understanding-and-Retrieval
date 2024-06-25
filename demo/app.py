@@ -33,7 +33,7 @@ interface = gr.Interface(
         lines=2, placeholder="Enter a description to search images"
     ),  # Input textbox for query
     outputs=[
-        gr.Image(type="pil", label="Matched Images/One Possible Images"),
+        gr.Image(type="pil", label="Matched Image/One Possible Image"),
         gr.JSON(label="Search Results"),
     ],  # Output image
     title="Typesense Image Search",  # Title of the Gradio interface
