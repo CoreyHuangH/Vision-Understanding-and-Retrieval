@@ -1,5 +1,4 @@
 import gradio as gr
-
 from utils import display_results
 
 # Create a Gradio interface
