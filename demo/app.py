@@ -10,7 +10,7 @@ interface = gr.Interface(
     outputs=[
         gr.Image(type="pil", label="Matched Image/One Possible Image"),
         gr.JSON(label="Search Results"),
-    ],  # Output image
+    ],  # Output image and JSON results
     title="Typesense Image Search",  # Title of the Gradio interface
     description="Search for relevant images based on natural language descriptions using Typesense. If error occurs, please re-enter the query with more key objects",  # Description of the interface
     examples=["airport terminal", "young people"],  # Example queries
