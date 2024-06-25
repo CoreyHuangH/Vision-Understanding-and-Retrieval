@@ -30,5 +30,5 @@ language queries.
 
 ## Note:
 - Please get your own claude api key if you need to modify *generate_descriptions.py*
-- Please run the *typesense_start.sh* first to install Typesense locally
+- Please run the *typesense_start.sh* first to install Typesense locally. In addition, run *build_index.py* to build an index of image descriptions in Typesense before running *demo/app.py*
 - Since Typesense is free only when hosted locally, **this project does not have a HuggingFace Space**. Please run *demo/app.py* to see the demo
