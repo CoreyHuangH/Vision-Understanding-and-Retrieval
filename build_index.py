@@ -1,5 +1,6 @@
 import json
 import torch
+import typesense
 from transformers import AutoTokenizer, AutoModel
 
 
@@ -80,3 +81,19 @@ def build_index(typesense_client):
             print(f"Failed to index document '{description['filename']}': {e}")
 
     print("Documents indexed successfully.")
+    
+if __name__ == "__main__":
+    typesense_client = typesense.Client(
+        {
+            "nodes": [
+                {
+                    "host": "localhost",
+                    "port": "8108",
+                    "protocol": "http",
+                }
+            ],
+            "api_key": "xyz",
+            "connection_timeout_seconds": 2,
+        }
+    )
+    build_index(typesense_client)

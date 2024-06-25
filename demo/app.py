@@ -1,30 +1,6 @@
-import typesense
 import gradio as gr
-import sys
-import os
 
 from utils import display_results
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from index_builder.build_index import build_index
-
-# Initialize the Typesense client
-typesense_client = typesense.Client(
-    {
-        "nodes": [
-            {
-                "host": "localhost",
-                "port": "8108",
-                "protocol": "http",
-            }
-        ],
-        "api_key": "xyz",
-        "connection_timeout_seconds": 2,
-    }
-)
-
-# Build the Typesense index
-build_index(typesense_client)
 
 # Create a Gradio interface
 interface = gr.Interface(
