@@ -29,12 +29,23 @@ def generate_vector(tokenizer, model, text):
     return vector_representation
 
 
-def build_index(typesense_client):
+def build_index():
     """
     Build an index of image descriptions in Typesense.
-    Args:
-        typesense_client (typesense.Client): The Typesense client.
     """
+    typesense_client = typesense.Client(
+        {
+            "nodes": [
+                {
+                    "host": "localhost",
+                    "port": "8108",
+                    "protocol": "http",
+                }
+            ],
+            "api_key": "xyz",
+            "connection_timeout_seconds": 2,
+        }
+    )
     tokenizer = AutoTokenizer.from_pretrained("intfloat/multilingual-e5-large")
     model = AutoModel.from_pretrained("intfloat/multilingual-e5-large")
 
@@ -83,17 +94,4 @@ def build_index(typesense_client):
 
 
 if __name__ == "__main__":
-    typesense_client = typesense.Client(
-        {
-            "nodes": [
-                {
-                    "host": "localhost",
-                    "port": "8108",
-                    "protocol": "http",
-                }
-            ],
-            "api_key": "xyz",
-            "connection_timeout_seconds": 2,
-        }
-    )
-    build_index(typesense_client)
+    build_index()
