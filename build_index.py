@@ -35,9 +35,8 @@ def build_index(typesense_client):
     Args:
         typesense_client (typesense.Client): The Typesense client.
     """
-    model_name = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModel.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained("intfloat/multilingual-e5-large")
+    model = AutoModel.from_pretrained("intfloat/multilingual-e5-large")
 
     # Load the json file
     descriptions = []
